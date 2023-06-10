@@ -20,12 +20,18 @@ public class PlayerAnims : MonoBehaviour
         if (rb.velocity.x > 0.001)
         {
             anim.SetTrigger("go_right");
-            Debug.Log("right");
+        }
+        else if (rb.velocity.x < -0.001)
+        {
+            anim.SetTrigger("go_left");
         }
         else if (rb.velocity.y < -0.001)
         {
             anim.SetTrigger("go_down");
-            //dsd
+        }
+        else if (rb.velocity.y > 0.001)
+        {
+            anim.SetTrigger("go_up");
         }
     }
 }
