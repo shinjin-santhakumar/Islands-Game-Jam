@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/greenphoenixscene.unity
-    guid: 02a3f7fb24c5b624bb78ed32405e3207
+    path: Assets/Scenes/mewycopygp.unity
+    guid: 3c1ff6821fd5eda49bc0d81ca22e104d
   m_configObjects: {}
