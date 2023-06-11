@@ -16,6 +16,8 @@ public class ResetButton : MonoBehaviour
     public GameObject Spring;
     public GameObject Shark;
 
+    public GameObject bigblocker;
+
     public GameObject youlost;
     public bool hit_Reset = false;
     Vector3 position;
@@ -56,6 +58,8 @@ public class ResetButton : MonoBehaviour
         Shadow.transform.position = position_shadow;
         Shadow.GetComponent<SpriteRenderer>().enabled = true;
         hit_Reset = false;
+
+        bigblocker.SetActive(false);
     }
 
 }

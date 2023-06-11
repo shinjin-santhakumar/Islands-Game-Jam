@@ -11,9 +11,18 @@ public class Death : MonoBehaviour
 
     public GameObject youlost;
 
+    public GameObject playerchild;
+
+    public AudioClip death;
+
+
+
+    public GameObject shake;
     private void Start()
     {
         anim = GetComponent<Animator>();
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = death;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,8 +33,9 @@ public class Death : MonoBehaviour
 
         if (collision.CompareTag("Shark"))
         {
+            shake.GetComponent<Screenshake>().Shake(10, 20);
             youlost.SetActive(true);
-
+            GetComponent<AudioSource>().Play();
             collision.gameObject.SetActive(false);
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0 , 0);
@@ -37,6 +47,14 @@ public class Death : MonoBehaviour
 
         if (collision.CompareTag("Rock") || collision.CompareTag("Door") || (collision.CompareTag("Spring") && GetComponent<Rigidbody2D>().velocity.x == 0))
         {
+
+            //disable collider on player
+            playerchild.GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+
+
+            StartCoroutine(shake.GetComponent<Screenshake>().Shake(.2f, .2f));
+            GetComponent<AudioSource>().Play();
             youlost.SetActive(true);
             //stop player movement
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

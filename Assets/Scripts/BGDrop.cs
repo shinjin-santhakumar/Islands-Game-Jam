@@ -49,7 +49,7 @@ public class BGDrop : MonoBehaviour, IDropHandler
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = positionRight;
             }
-            else if (eventData.pointerDrag.CompareTag("Left2"))
+            else if (eventData.pointerDrag.CompareTag("Left"))
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = positionLeft;
             }

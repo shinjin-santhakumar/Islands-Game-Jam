@@ -9,6 +9,8 @@ public class GoButton : MonoBehaviour
     public Button _GoButton;
     public GameObject player;
     public GameObject playerchild;
+
+    public GameObject bigblocker;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class GoButton : MonoBehaviour
 
         _GoButton.GetComponent<Button>().enabled = false;
         _GoButton.GetComponent<Image>().color = Color.gray;
+
+        bigblocker.SetActive(true);
     }
 
 }

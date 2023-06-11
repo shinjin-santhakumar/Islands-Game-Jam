@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 60557019}
   - component: {fileID: 60557018}
   - component: {fileID: 60557017}
+  - component: {fileID: 60557020}
   m_Layer: 5
   m_Name: GoButton
   m_TagString: GoButton
@@ -314,6 +315,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60557015}
   m_CullTransparentMesh: 1
+--- !u!114 &60557020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60557015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d465662c25a479a45814577c763cd67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &74271708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2182,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 901897338}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2977,7 +2990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654788959881290084, guid: 1ccbaff67217f1b4b8120d76a9a24c98, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7654788959881290084, guid: 1ccbaff67217f1b4b8120d76a9a24c98, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3855,6 +3868,7 @@ GameObject:
   - component: {fileID: 748831743}
   - component: {fileID: 748831742}
   - component: {fileID: 748831741}
+  - component: {fileID: 748831744}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3928,6 +3942,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748831744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748831740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98884f15e5fb8d4dbc7b2512547a200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &784421731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,6 +4038,7 @@ GameObject:
   - component: {fileID: 799681223}
   - component: {fileID: 799681224}
   - component: {fileID: 799681225}
+  - component: {fileID: 799681226}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4181,6 +4208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadow: {fileID: 313757219}
   youlost: {fileID: 1147927587}
+  playerchild: {fileID: 348758949}
+  death: {fileID: 8300000, guid: 3c37f88c9374c744f827e7399a1cb3eb, type: 3}
+  shake: {fileID: 748831740}
 --- !u!114 &799681225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4196,6 +4226,102 @@ MonoBehaviour:
   youwin: {fileID: 315150391}
   resetButton: {fileID: 810604202}
   nextLevel: {fileID: 2019023858}
+--- !u!82 &799681226
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799681217}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3c37f88c9374c744f827e7399a1cb3eb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &810604201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,6 +4334,7 @@ GameObject:
   - component: {fileID: 810604204}
   - component: {fileID: 810604203}
   - component: {fileID: 810604202}
+  - component: {fileID: 810604206}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: Untagged
@@ -4318,6 +4445,18 @@ RectTransform:
   m_AnchoredPosition: {x: 866, y: 453}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &810604206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810604201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d465662c25a479a45814577c763cd67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &868798144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4553,9 +4692,9 @@ RectTransform:
   - {fileID: 976626331}
   - {fileID: 1147927588}
   - {fileID: 315150392}
-  - {fileID: 2019023859}
   - {fileID: 436953940}
   - {fileID: 1674414325}
+  - {fileID: 2019023859}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4820,6 +4959,7 @@ GameObject:
   - component: {fileID: 976626333}
   - component: {fileID: 976626332}
   - component: {fileID: 976626335}
+  - component: {fileID: 976626336}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -4952,6 +5092,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f2c2b3841a5dce41b159e1b639611b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &976626336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976626330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d465662c25a479a45814577c763cd67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &985007245
@@ -5590,6 +5742,7 @@ MonoBehaviour:
   _GoButton: {fileID: 60557017}
   player: {fileID: 799681217}
   playerchild: {fileID: 348758949}
+  bigblocker: {fileID: 1674414324}
 --- !u!4 &1134440009
 Transform:
   m_ObjectHideFlags: 0
@@ -5626,6 +5779,7 @@ MonoBehaviour:
   Key: {fileID: 1901072169}
   Spring: {fileID: 684043968}
   Shark: {fileID: 503701837}
+  bigblocker: {fileID: 1674414324}
   youlost: {fileID: 1147927587}
   hit_Reset: 0
 --- !u!1 &1147927587
@@ -8420,7 +8574,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 901897338}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9872,7 +10026,7 @@ RectTransform:
   m_Children:
   - {fileID: 1924363477}
   m_Father: {fileID: 901897338}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10607,7 +10761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654788959881290085, guid: 02298f93e193ac949b17ac37bc3be8de, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Left
       objectReference: {fileID: 0}
     - target: {fileID: 7698104685326104805, guid: 02298f93e193ac949b17ac37bc3be8de, type: 3}
       propertyPath: m_Size.x
