@@ -46,7 +46,7 @@ public class MenuScript : MonoBehaviour
 
     public void NextLevel()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(0);
     }
 }
