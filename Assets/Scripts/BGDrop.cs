@@ -11,13 +11,12 @@ public class BGDrop : MonoBehaviour, IDropHandler
     private void Awake()
     {
         defaultAnchoredPos = defaultAnchoredPos.GetComponent<RectTransform>();
-        Debug.Log("On drop");
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("On drop");
 
+        Debug.Log("print");
         if (eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = defaultAnchoredPos.anchoredPosition;

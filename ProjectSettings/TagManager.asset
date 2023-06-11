@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - GoButton
+  - Down
+  - Up
+  - Right
+  - Left
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
