@@ -15,6 +15,8 @@ public class ResetButton : MonoBehaviour
     public GameObject Key;
     public GameObject Spring;
     public GameObject Shark;
+
+    public GameObject youlost;
     Vector3 position;
     Vector3 position_shadow;
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class ResetButton : MonoBehaviour
    
     void TaskOnClick()
     {
+        youlost.SetActive(false);
         Shark.SetActive(true);
         playerchild.transform.eulerAngles = new Vector3(0, 0, 0);
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);

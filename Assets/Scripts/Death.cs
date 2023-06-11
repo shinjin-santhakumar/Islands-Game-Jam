@@ -9,6 +9,8 @@ public class Death : MonoBehaviour
 
     public GameObject shadow;
 
+    public GameObject youlost;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -17,6 +19,8 @@ public class Death : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //display game over/restart
+
+        youlost.SetActive(true);
 
         if (collision.CompareTag("Shark"))
         {
