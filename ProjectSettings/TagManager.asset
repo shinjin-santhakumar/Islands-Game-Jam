@@ -13,6 +13,10 @@ TagManager:
   - PlayerChild
   - SpringBad
   - Spring
+  - Down
+  - Up
+  - Right
+  - Left
   layers:
   - Default
   - TransparentFX
