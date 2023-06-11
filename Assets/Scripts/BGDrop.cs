@@ -10,7 +10,7 @@ public class BGDrop : MonoBehaviour, IDropHandler
     private Vector2 positionRight;
     private Vector2 positionLeft;
 
-    public RectTransform defaultAnchoredPos;
+    //public RectTransform defaultAnchoredPos;
     //
 
     private void Start()
@@ -23,7 +23,7 @@ public class BGDrop : MonoBehaviour, IDropHandler
 
     private void Awake()
     {
-        defaultAnchoredPos = defaultAnchoredPos.GetComponent<RectTransform>();
+        //defaultAnchoredPos = defaultAnchoredPos.GetComponent<RectTransform>();
         //Debug.Log("On drop");
     }
 
@@ -49,7 +49,7 @@ public class BGDrop : MonoBehaviour, IDropHandler
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = positionRight;
             }
-            else if (eventData.pointerDrag.CompareTag("Left"))
+            else if (eventData.pointerDrag.CompareTag("Left2"))
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = positionLeft;
             }
