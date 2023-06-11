@@ -17,6 +17,7 @@ TagManager:
   - Up
   - Right
   - Left
+  - Music
   layers:
   - Default
   - TransparentFX
