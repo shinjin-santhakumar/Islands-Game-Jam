@@ -7,6 +7,7 @@ public class Spring : MonoBehaviour
     public GameObject Player;
     public GameObject PlayerChild;
 
+    public GameObject Listener;
     public bool HitSpring;
     public Vector3 startPoint;
     public Vector3 endPoint;
@@ -14,7 +15,7 @@ public class Spring : MonoBehaviour
     public Vector3 ModifyLenOfJump;
     public Vector3 ModifyArcControlPoint;
     public Transform ArcPoint;
-    float count = 0.0f;
+    public float count = 0.0f;
     bool right = false;
 
 
@@ -29,7 +30,7 @@ public class Spring : MonoBehaviour
             //right velocity
             if (Player.GetComponent<Rigidbody2D>().velocity.x > .01f)
             {
-                Debug.Log("kek");
+                
                 startPoint = Player.transform.position;
                 endPoint = Player.transform.position + ModifyLenOfJump;
                 controlPoint = startPoint + ModifyArcControlPoint;
@@ -38,7 +39,7 @@ public class Spring : MonoBehaviour
             //left velocity
             else if (Player.GetComponent<Rigidbody2D>().velocity.x < -.01f)
             {
-                Debug.Log("kek1");
+               
                 startPoint = Player.transform.position;
                 endPoint = Player.transform.position - ModifyLenOfJump;
                 controlPoint.y = Player.transform.position.y + ModifyArcControlPoint.y;
@@ -56,12 +57,13 @@ public class Spring : MonoBehaviour
     }
     private void Update()
     {
-        if (HitSpring == true)
+        if (HitSpring == true && Listener.GetComponent<ResetButton>().hit_Reset == false)
         {
-   
+            Debug.Log("running lerp");
             
             if (count < 1.0f)
             {
+                Debug.Log("inside lerp");
                 count += 1.0f * Time.deltaTime;
 
                 Vector3 m1 = Vector3.Lerp(startPoint, controlPoint, count);
@@ -75,12 +77,14 @@ public class Spring : MonoBehaviour
                 Player.GetComponent<BoxCollider2D>().enabled = true;
                 PlayerChild.GetComponent<BoxCollider2D>().enabled = true;
                 right = false;
+                count = 0;
             }
             else if (Player.transform.position.x <= endPoint.x && right == false)
             {
                 HitSpring = false;
                 Player.GetComponent<BoxCollider2D>().enabled = true;
                 PlayerChild.GetComponent<BoxCollider2D>().enabled = true;
+                count = 0;
             }
 
         }

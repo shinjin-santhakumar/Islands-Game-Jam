@@ -6,7 +6,8 @@ public class Shadow : MonoBehaviour
 {
     public GameObject Spring;
     public GameObject Player;
-    float count = 0.0f;
+    public GameObject Listener;
+    
     Vector3 st;
     Vector3 ed;
     Vector3 ctrl;
@@ -27,16 +28,16 @@ public class Shadow : MonoBehaviour
     }
     void updatePosition()
     { 
-        if (Spring.GetComponent<Spring>().HitSpring == true)
+        if (Spring.GetComponent<Spring>().HitSpring == true && Listener.GetComponent<ResetButton>().hit_Reset == false)
         {
-            if (count < 1.0f)
+            if (Spring.GetComponent<Spring>().count < 1.0f)
             {
-                count += 1.0f * Time.deltaTime;
+                Spring.GetComponent<Spring>().count += 1.0f * Time.deltaTime;
 
 
-                Vector3 m1 = Vector3.Lerp(st, ctrl, count);
-                Vector3 m2 = Vector3.Lerp(ctrl, ed, count);
-                gameObject.transform.position = Vector3.Lerp(m1, m2, count);
+                Vector3 m1 = Vector3.Lerp(st, ctrl, Spring.GetComponent<Spring>().count);
+                Vector3 m2 = Vector3.Lerp(ctrl, ed, Spring.GetComponent<Spring>().count);
+                gameObject.transform.position = Vector3.Lerp(m1, m2, Spring.GetComponent<Spring>().count);
 
             }
         }

@@ -9,7 +9,7 @@ public class PlayerWin : MonoBehaviour
     public GameObject youwin;
     public Button resetButton;
 
-    public Button nextLevel;
+    public GameObject nextLevel;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerWin : MonoBehaviour
             youwin.SetActive(true);
             resetButton.GetComponent<Button>().enabled = false;
             resetButton.GetComponent<Image>().color = Color.gray;
-            nextLevel.GetComponent<Button>().enabled = true;
+            nextLevel.SetActive(true);
         }
     }
 }
