@@ -23,12 +23,10 @@ public class Shark : MonoBehaviour
         //print(Vector3.Distance(waypoints[currentWaypointIndex].transform.position, transform.position));
         if (Vector3.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
         {
-            print("swap inde1x");
             currentWaypointIndex++;
             sr.flipX = !sr.flipX;
             if (currentWaypointIndex >= waypoints.Length)
             {
-                print("swap index");
                 currentWaypointIndex = 0;
             }
         }

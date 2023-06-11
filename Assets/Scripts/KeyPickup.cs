@@ -19,7 +19,7 @@ public class KeyPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Door.GetComponent<SpriteRenderer>().enabled = false;
+            Door.GetComponent<Animator>().SetTrigger("door_open");
             Door.GetComponent<BoxCollider2D>().enabled = false;
             sr.enabled = false;
             bc.enabled = false;

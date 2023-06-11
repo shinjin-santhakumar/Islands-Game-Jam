@@ -10,11 +10,18 @@ public class Shadow : MonoBehaviour
     Vector3 st;
     Vector3 ed;
     Vector3 ctrl;
+    float fl;
+    private void Awake()
+    {
+        fl = transform.position.y;
+    }
     private void Update()
     {
         st = Spring.GetComponent<Spring>().startPoint;
         ed = Spring.GetComponent<Spring>().endPoint;
         ctrl = Spring.GetComponent<Spring>().controlPoint;
+        st.y = 
+        ed.y = transform.position.y;
         ctrl.y = st.y;
         updatePosition();
     }

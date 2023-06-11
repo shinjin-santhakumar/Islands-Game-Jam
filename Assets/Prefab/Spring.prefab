@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7491032164483736159}
   - component: {fileID: 345021931850494726}
   - component: {fileID: 7561627018521549668}
+  - component: {fileID: 8622060385104135534}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Untagged
@@ -132,3 +133,24 @@ MonoBehaviour:
   ModifyLenOfJump: {x: 2, y: 0, z: 0}
   ModifyArcControlPoint: {x: 1, y: 1, z: 0}
   ArcPoint: {fileID: 0}
+--- !u!95 &8622060385104135534
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393276872507747210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 390b62ebf8f23d14a864a62636e27ac3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

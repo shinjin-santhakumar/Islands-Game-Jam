@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - GoButton
+  - shadow
+  - Rock
+  - Door
+  - Shark
   layers:
   - Default
   - TransparentFX

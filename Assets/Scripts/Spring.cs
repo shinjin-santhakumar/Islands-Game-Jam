@@ -14,6 +14,7 @@ public class Spring : MonoBehaviour
     public Vector3 ModifyArcControlPoint;
     public Transform ArcPoint;
     float count = 0.0f;
+    bool right = false;
 
 
     // Start is called before the first frame update
@@ -22,25 +23,41 @@ public class Spring : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            HitSpring = true;
-            startPoint = Player.transform.position;
-            endPoint = Player.transform.position + ModifyLenOfJump;
-
             Player.GetComponent<BoxCollider2D>().enabled = false;
+            //right velocity
+            if (Player.GetComponent<Rigidbody2D>().velocity.x > .01f)
+            {
+                Debug.Log("kek");
+                startPoint = Player.transform.position;
+                endPoint = Player.transform.position + ModifyLenOfJump;
+                controlPoint = startPoint + ModifyArcControlPoint;
+                right = true;
+            }
+            //left velocity
+            else if (Player.GetComponent<Rigidbody2D>().velocity.x < -.01f)
+            {
+                Debug.Log("kek1");
+                startPoint = Player.transform.position;
+                endPoint = Player.transform.position - ModifyLenOfJump;
+                controlPoint.y = Player.transform.position.y + ModifyArcControlPoint.y;
+                controlPoint.x = Player.transform.position.x - ModifyArcControlPoint.x; 
+            }
+            HitSpring = true;
+
+            //Play spring sink animation, remove collider
+            GetComponent<Animator>().SetTrigger("ramp_sink");
+            GetComponent<BoxCollider2D>().enabled = false;
+            
         }
+
+       
     }
     private void Update()
     {
         if (HitSpring == true)
         {
-            if (Player.GetComponent<Rigidbody2D>().velocity.x > .01f)
-            {
-                controlPoint = startPoint + ModifyArcControlPoint;
-            }
-            else
-            {
-                controlPoint = startPoint + (-ModifyArcControlPoint);
-            }
+   
+            
             if (count < 1.0f)
             {
                 count += 1.0f * Time.deltaTime;
@@ -50,11 +67,18 @@ public class Spring : MonoBehaviour
                 Player.transform.position = Vector3.Lerp(m1, m2, count);
 
             }
-            if (Player.transform.position.x >= endPoint.x)
+            if (Player.transform.position.x >= endPoint.x && right == true)
+            {
+                HitSpring = false;
+                Player.GetComponent<BoxCollider2D>().enabled = true;
+                right = false;
+            }
+            else if (Player.transform.position.x <= endPoint.x && right == false)
             {
                 HitSpring = false;
                 Player.GetComponent<BoxCollider2D>().enabled = true;
             }
+
         }
     }
 }
