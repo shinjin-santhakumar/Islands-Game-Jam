@@ -9,6 +9,10 @@ TagManager:
   - Rock
   - Door
   - Shark
+  - Ship
+  - PlayerChild
+  - SpringBad
+  - Spring
   layers:
   - Default
   - TransparentFX

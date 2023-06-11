@@ -18,11 +18,10 @@ public class Death : MonoBehaviour
     {
         //display game over/restart
 
-
         if (collision.CompareTag("Shark"))
         {
 
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0 , 0);
             anim.SetTrigger("sharked");
@@ -30,7 +29,7 @@ public class Death : MonoBehaviour
             shadow.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        if (collision.CompareTag("Rock") || collision.CompareTag("Door"))
+        if (collision.CompareTag("Rock") || collision.CompareTag("Door") || (collision.CompareTag("Spring") && GetComponent<Rigidbody2D>().velocity.x == 0))
         {
             //stop player movement
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class RightWave : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject playerchild;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Do something else here");
-        if (other.CompareTag("Player") )
+        if (other.CompareTag("PlayerChild") )
         {
-            StartCoroutine(WaitCo(other));
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 0);
+            playerchild.transform.eulerAngles = new Vector3(0, 0, 0);
             
         }
-    }
-
-    IEnumerator WaitCo(Collider2D other)
-    {
-        yield return new WaitForSeconds(0.33f);
-        other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 0);
-
     }
 
 }

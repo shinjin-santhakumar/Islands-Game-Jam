@@ -9,10 +9,12 @@ public class ResetButton : MonoBehaviour
     public Button _ResetButton;
     public Button _GoButton;
     public GameObject player;
+    public GameObject playerchild;
     public GameObject Shadow;
     public GameObject Door;
     public GameObject Key;
     public GameObject Spring;
+    public GameObject Shark;
     Vector3 position;
     Vector3 position_shadow;
     // Start is called before the first frame update
@@ -26,10 +28,14 @@ public class ResetButton : MonoBehaviour
    
     void TaskOnClick()
     {
+        Shark.SetActive(true);
+        playerchild.transform.eulerAngles = new Vector3(0, 0, 0);
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         Shadow.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         player.GetComponent<BoxCollider2D>().enabled = false;
         player.transform.position = position;
+        player.GetComponent<Animator>().Rebind();
+        player.GetComponent<Animator>().Update(0f);
         player.GetComponent<Animator>().SetTrigger("reset");
         _GoButton.GetComponent<Button>().enabled = true;
         _ResetButton.GetComponent<Button>().enabled = true;

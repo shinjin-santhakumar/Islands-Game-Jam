@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8622060385104135534}
   m_Layer: 0
   m_Name: Spring
-  m_TagString: Untagged
+  m_TagString: Spring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 1363225549, guid: 15d02779e61fe1549a3d7994217fe794, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007901013, y: -0.015801907}
+  m_Offset: {x: -0.006193489, y: -0.03694366}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.85714287, y: 0.85714287}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17830074, y: 0.16249895}
+  m_Size: {x: 1.1033597, y: 0.33556423}
   m_EdgeRadius: 0
 --- !u!114 &7561627018521549668
 MonoBehaviour:
@@ -126,11 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  PlayerChild: {fileID: 0}
   HitSpring: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   controlPoint: {x: 0, y: 0, z: 0}
-  ModifyLenOfJump: {x: 2, y: 0, z: 0}
+  ModifyLenOfJump: {x: 2.1, y: 0, z: 0}
   ModifyArcControlPoint: {x: 1, y: 1, z: 0}
   ArcPoint: {fileID: 0}
 --- !u!95 &8622060385104135534

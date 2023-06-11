@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spring : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject PlayerChild;
 
     public bool HitSpring;
     public Vector3 startPoint;
@@ -21,9 +22,10 @@ public class Spring : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerChild"))
         {
             Player.GetComponent<BoxCollider2D>().enabled = false;
+            PlayerChild.GetComponent<BoxCollider2D>().enabled = false;
             //right velocity
             if (Player.GetComponent<Rigidbody2D>().velocity.x > .01f)
             {
@@ -71,12 +73,14 @@ public class Spring : MonoBehaviour
             {
                 HitSpring = false;
                 Player.GetComponent<BoxCollider2D>().enabled = true;
+                PlayerChild.GetComponent<BoxCollider2D>().enabled = true;
                 right = false;
             }
             else if (Player.transform.position.x <= endPoint.x && right == false)
             {
                 HitSpring = false;
                 Player.GetComponent<BoxCollider2D>().enabled = true;
+                PlayerChild.GetComponent<BoxCollider2D>().enabled = true;
             }
 
         }

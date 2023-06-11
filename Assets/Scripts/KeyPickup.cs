@@ -17,7 +17,7 @@ public class KeyPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("PlayerChild"))
         {
             Door.GetComponent<Animator>().SetTrigger("door_open");
             Door.GetComponent<BoxCollider2D>().enabled = false;

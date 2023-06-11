@@ -8,6 +8,7 @@ public class GoButton : MonoBehaviour
 
     public Button _GoButton;
     public GameObject player;
+    public GameObject playerchild;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,11 @@ public class GoButton : MonoBehaviour
     void TaskOnClick()
     {
 
+        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(3 , 0);
         player.GetComponent<BoxCollider2D>().enabled = true;
+        playerchild.GetComponent<BoxCollider2D>().enabled = true;
+        playerchild.transform.Rotate(0, 0, 0);
 
         _GoButton.GetComponent<Button>().enabled = false;
         _GoButton.GetComponent<Image>().color = Color.gray;
