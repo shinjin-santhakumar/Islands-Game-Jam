@@ -49,4 +49,29 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //SceneManager.LoadScene(0);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void MuteToggle()
+    {
+        if (AudioListener.volume == 0)
+        {
+            AudioListener.volume = 1;
+        }
+        else
+        {
+            AudioListener.volume = 0;
+        }
+        // if (muted)
+        // {
+        //     AudioListener.volume = 0;
+        // }
+        // else
+        // {
+        //     AudioListener.volume = 1;
+        // }
+    }
 }
