@@ -11,6 +11,8 @@ public class PlayerWin : MonoBehaviour
 
     public GameObject nextLevel;
 
+    public AudioSource winSound;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,6 +28,8 @@ public class PlayerWin : MonoBehaviour
             resetButton.GetComponent<Button>().enabled = false;
             resetButton.GetComponent<Image>().color = Color.gray;
             nextLevel.SetActive(true);
+
+            winSound.Play(0);
         }
     }
 }

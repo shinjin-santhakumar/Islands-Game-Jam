@@ -65,13 +65,10 @@ public class MenuScript : MonoBehaviour
         {
             AudioListener.volume = 0;
         }
-        // if (muted)
-        // {
-        //     AudioListener.volume = 0;
-        // }
-        // else
-        // {
-        //     AudioListener.volume = 1;
-        // }
+    }
+
+    public void DestroyButton()
+    {
+        Destroy(gameObject);
     }
 }
